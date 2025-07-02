@@ -1,0 +1,242 @@
+
+
+
+.hoverbox{
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  z-index: 1;
+}
+
+.flip-box {
+  background-color: transparent;
+  width: 100px;
+  height: 100px;
+  
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  position: absolute;
+  top: 275px;
+  right:350px;
+  z-index: 1;
+
+}
+
+/* This container is needed to position the front and back side */
+.flip-box-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 30px;
+  
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-box-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-box-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.flip-box2 {
+  background-color: transparent;
+  width: 100px;
+  height: 100px;
+  
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+   position: absolute;
+   top: 385px;
+   right: 200px;
+  
+}
+
+/* This container is needed to position the front and back side */
+.flip-box-inner2 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  font-size: 30px;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-box2:hover .flip-box-inner2 {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-box-front2, .flip-box-back2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-box-front2 {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-box-back2 {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+
+
+.flip-box3 {
+  background-color: transparent;
+  width: 100px;
+  height: 100px;
+  
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  position: absolute;
+  top: 500px;
+  right:350px;
+}
+
+/* This container is needed to position the front and back side */
+.flip-box-inner3 {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  font-size: 30px;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-box3:hover .flip-box-inner3 {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-box-front3, .flip-box-back3 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-box-front3 {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-box-back3 {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+
+
+body {
+  background-position: center;
+  background-image: url("photos/realRecordRoom.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  height: 100vh;
+  width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+    height: 100vh;
+    
+    
+    
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+}
+
+.melting-text-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.melting-text {
+    font-size: 6rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    position: relative;
+    animation: melt 3s infinite ease-in-out;
+    background: linear-gradient(90deg, #ff6f61, #ffbd44, #ff6f61);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.melting-text::before,
+.melting-text::after {
+    content: 'Atlas Zimmermann';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #ff6f61, #ffbd44, #ff6f61);
+    -webkit-background-clip: text;
+    color: transparent;
+    z-index: -1;
+    transform: scaleY(1);
+    opacity: 0.5;
+    animation: drip 3s infinite ease-in-out;
+}
+
+.melting-text::after {
+    filter: blur(10px);
+    opacity: 0.3;
+}
+
+/* Keyframes for melting effect */
+@keyframes melt {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(20px);
+    }
+}
+
+@keyframes drip {
+    0%, 100% {
+        transform: scaleY(1);
+        opacity: 0.5;
+    }
+    50% {
+        transform: scaleY(1.5);
+        opacity: 0.7;
+    }
+}

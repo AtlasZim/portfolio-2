@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="works.css">
+    <title>Image Gallery</title>
+</head>
+ <header>
+        <nav>
+            <div class="logo">
+              Atlas Zimmermann
+              </div>
+            <ul class="nav-links">
+                <li><a href='../portfolio2.html'>Home</a></li>
+            </ul>
+        </nav>
+    </header>
+<body>
+    <!-- Heading Name -->
+    <div class="heading">
+        <h1></h1>
+    </div>
+
+    <!-- Image Gallery section all images in one div -->
+    <div class="gallery">
+        <div class="gallery-item">
+            <img src="../photos/project1.PNG"
+                onclick="openModal('../photos/project1.PNG')"
+                alt="Image 1">
+                
+        </div>
+        <div class="gallery-item">
+            <img src="../photos/project2.PNG"
+                onclick="openModal(
+        '../photos/project2.PNG')"
+                alt="Image 2">
+        </div>
+        <div class="gallery-item">
+            <img src="../photos/project3.PNG"
+                onclick="openModal(
+        '../photos/project3.PNG')"
+                alt="Image 3">
+                
+        </div>
+       
+        
+        </div>
+        <div class="websites">
+            <a href="http://127.0.0.1:3000/food.html">Food Bank -  </a>
+            <p></p>
+            <a href="about me/aboutme.html">   Choose Your Own Adventure  -</a>
+            <p></p>
+            <a href="http://127.0.0.1:3000/index.html">   Personality Quiz</a>
+        </div>
+       
+    <!-- Modal for Image Display -->
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <!-- JavaScript for Modal -->
+    <script>
+        function openModal(src) {
+            document.getElementById("modalImage").src = src;
+            document.getElementById("myModal").style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
